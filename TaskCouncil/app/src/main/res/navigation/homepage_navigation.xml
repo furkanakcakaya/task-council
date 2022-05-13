@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/homepage_navigation"
+    app:startDestination="@id/homepageFragment">
+
+    <fragment
+        android:id="@+id/homepageFragment"
+        android:name="com.furkanakcakaya.taskcouncil.fragment.HomepageFragment"
+        android:label="HomepageFragment"
+        tools:layout="@layout/fragment_homepage">
+        <action
+            android:id="@+id/action_homepageFragment_to_taskDetailsFragment"
+            app:destination="@id/taskDetailsFragment" />
+        <action
+            android:id="@+id/action_homepageFragment_to_taskSaveFragment"
+            app:destination="@id/taskSaveFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/taskDetailsFragment"
+        android:name="com.furkanakcakaya.taskcouncil.fragment.TaskDetailsFragment"
+        android:label="TaskDetailsFragment"
+        tools:layout="@layout/fragment_task_details">
+        <argument
+            android:name="task"
+            app:argType="com.furkanakcakaya.taskcouncil.entity.Task" />
+    </fragment>
+    <fragment
+        android:id="@+id/taskSaveFragment"
+        android:name="com.furkanakcakaya.taskcouncil.fragment.TaskSaveFragment"
+        android:label="TaskSaveFragment"
+        tools:layout="@layout/fragment_task_save"/>
+</navigation>
